@@ -11,7 +11,4 @@ sed -i '/usr\/local\/go/d' ~/.bashrc
 
 source ~/.bashrc
 
-echo "########## which go ##########"
-which go
-
 echo "Please execute command \"source ~/.bashrc\""
