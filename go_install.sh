@@ -20,15 +20,21 @@ echo "remove go${GO_VERSION}.linux-amd64.tar.gz"
 rm -f go${GO_VERSION}.linux-amd64.tar.gz
 
 # 加入 PATH
-echo "add PATH"
-echo ""  >> ~/.bashrc
-echo "########## add go path #########"  >> ~/.bashrc
-echo "export PATH=\${PATH}:/usr/local/go/${GO_VERSION}/bin" >> ~/.bashrc
+if [ -f  ~/.zshrc ];then
+    bashfile=~/.zshrc
+else
+    bashfile=~/.bashrc
+fi
 
-source ~/.bashrc
+echo "add PATH"
+echo ""  >> ${bashfile}
+echo "########## add go path #########"  >> ${bashfile}
+echo "export PATH=\${PATH}:/usr/local/go/${GO_VERSION}/bin" >> ${bashfile}
+
+source ${bashfile}
 
 # 顯示 go version
 echo "########## go version ##########"
 go version
 
-echo "Please execute command \"source ~/.bashrc\""
+echo "Please execute command \"source ${bashfile}\""

@@ -7,11 +7,11 @@ sed -i 's/1.16/{your like version}/g' .goversion
 
 # 執行安裝
 ```sh
-make go-install
+sudo make go-install
 ```
 
 # 卸載
 
 ```sh
-make clean
+sudo make clean
 ```
